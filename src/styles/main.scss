@@ -8,4 +8,27 @@
  -webkit-font-smoothing: antialiased;
 }
 
+body {
+ margin: 0; padding: 0;
+}
+
+#main-logo {
+ width: 9rem;
+ height: 4rem;
+ z-index: 2;
+ position: fixed;
+ left: 2.5rem;
+ top: 2.5rem;
+}
+
+.feedSection {
+ padding-top: 12rem;
+}
+
 @import "./components/menu";
+
+@import "./routes/404";
+@import "./routes/about";
+@import "./routes/home";
+@import "./routes/newsletter";
+@import "./routes/submission";
