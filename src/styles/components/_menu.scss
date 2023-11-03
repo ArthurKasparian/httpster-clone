@@ -1,0 +1,184 @@
+// Copyright (c) 2023 ~ 2023 Arthur Kasparian, Individual All Rights Reserved
+// Unauthorized copying of this file, via any medium is strictly prohibited
+// Proprietary and confidential
+// Written by Arthur Kasparian <contact@arthurkasparian.dev>, Month 11 2023. Last modified 03/11/2023, 8:35 pm
+
+$my-gray: rgba(white, .15);
+
+aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  height: 100dvh;
+
+  // background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: row-reverse;
+
+  button {
+    height: 100%;
+    width: 44px;
+    background-color: black;
+    border: none;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    span {
+      writing-mode: vertical-lr;
+      text-transform: uppercase;
+      font-size: .65rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  nav.hidden {
+    nav, > div {
+      width: 0;
+      background-color: transparent;
+      border-right: 0 solid transparent;
+      padding: 0;
+      margin: 0;
+
+      * {
+        display: none;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row-reverse;
+
+    > div {
+      transition: all .65s ease, width .45s ease;
+      width: 14dvw;
+      padding: 12px 24px;
+      border-right: 1px solid $my-gray;
+      background-color: black;
+
+      h5 {
+        opacity: .6;
+        margin: 24px 0 12px .8dvw;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+
+    // General Links
+    div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      ul li {
+        height: 48px;
+
+        border: 1px solid $my-gray;
+        border-radius: 4px;
+        transition: border .4s ease;
+
+        &:hover {
+          border: 1px solid rgba(white, .5);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          padding-left: 12px;
+
+          width: auto;
+          height: 100%;
+
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+
+          sup {
+            color: orange;
+            text-transform: uppercase;
+            font-size: .55rem;
+            padding: 0 0 12px 2px;
+            letter-spacing: .1rem;
+          }
+        }
+
+        &:first-of-type {
+          background-color: white;
+          transition: opacity .3s ease;
+
+          &:hover {
+            opacity: .7;
+          }
+
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+
+    // Filters
+    div:not(:first-of-type) {
+
+
+
+      ul li {
+        width: fit-content;
+
+        border-radius: 4px;
+        transition: border .3s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+          border: 1px solid rgba(white, .5);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          padding: 8px 16px 8px 12px;
+
+          width: auto;
+          height: auto;
+
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+
+          sup {
+            color: grey;
+            text-transform: uppercase;
+            font-size: .55rem;
+            padding: 0 0 12px 2px;
+            letter-spacing: .1rem;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
