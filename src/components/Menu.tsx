@@ -5,10 +5,11 @@
 
 import {NavLink} from "react-router-dom";
 import MenuFilterList from "./MenuFilterList.tsx";
+import websites from "../websites.ts";
 
 const Menu = () => {
-    const types: string[] = ['Marketing', 'Portfolio']
-    const styles: string[] = ['Minimalist', 'Dark', 'Colourful']
+    const types: string[] = [... new Set(websites.map(site => site.types).flat())]
+    const styles: string[] = [... new Set(websites.map(site => site.styles).flat())]
     const toggleMenu = () => { document.querySelector('nav')!.classList.toggle('hidden') }
 
     return (

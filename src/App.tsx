@@ -8,31 +8,32 @@ import About from "./routes/About.tsx";
 import Newsletter from "./routes/Newsletter.tsx";
 import NotFound from "./routes/NotFound.tsx";
 import Submission from "./routes/Submission.tsx";
+import FilteredFeed from "./routes/FilteredFeed.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route path="/" element={<FeedLayout />}>
+        <Route path="/" element={<FeedLayout />}>
 
-        <Route index element={<Home />}/>
-        <Route path="about" element={<About />} />
+            <Route index element={<Home />}/>
+            <Route path="about" element={<About />} />
 
-        <Route path="type">
+            <Route
+                path=":filter/:id"
+                element={<FilteredFeed />}
+            />
 
         </Route>
 
-        <Route path="style">
+        {/* Filtered by type or style */}
 
-        </Route>
 
-      </Route>
+        <Route path="website"></Route>
 
-      <Route path="website"></Route>
+        <Route path="newsletter" element={<Newsletter />} />
+        <Route path="contact" element={<Submission />} />
 
-      <Route path="newsletter" element={<Newsletter />} />
-      <Route path="contact" element={<Submission />} />
-
-      <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
     </Route>
   )
 )

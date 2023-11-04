@@ -12,6 +12,8 @@ type Props = {
 }
 
 const MenuFilterList = ({id, title, list}: Props) => {
+    const address: string = `${title == 'Type' ? 'type' : 'style'}/`
+
     return (
         <div id={id} className="menuFilter">
             <h5>Filter by {title}</h5>
@@ -19,7 +21,7 @@ const MenuFilterList = ({id, title, list}: Props) => {
             <ul>
                 {list.map((item, index) => (
                     <li key={index} onClick={() => document.querySelector('nav')!.classList.add('hidden')}>
-                        <NavLink to="">{item}</NavLink>
+                        <NavLink to={address + item.toLowerCase()}>{item}</NavLink>
                     </li>
                 ))}
             </ul>
