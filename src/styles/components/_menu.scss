@@ -56,10 +56,12 @@ aside {
   nav {
     display: flex;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-left: 40px;
 
     > div {
       transition: all .65s ease, width .45s ease;
-      width: 14dvw;
+      width: 250px;
       padding: 12px 24px;
       border-right: 1px solid $my-gray;
       background-color: black;
