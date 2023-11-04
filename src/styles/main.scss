@@ -26,6 +26,8 @@ body {
 }
 
 @import "./components/menu";
+@import "./components/feed";
+@import "./components/siteCard";
 
 @import "./routes/404";
 @import "./routes/about";

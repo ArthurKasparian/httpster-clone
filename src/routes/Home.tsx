@@ -4,8 +4,11 @@
 // Written by Arthur Kasparian <contact@arthurkasparian.dev>, Month 11 2023. Last modified 03/11/2023, 10:35 pm
 
 import {NavLink} from "react-router-dom";
+import Feed from "../components/Feed.tsx";
+import websites from "../websites.ts";
 
 const Home = () => {
+
     return (
         <div id="home">
             <h1>Web design inspiration from all over the world</h1>
@@ -17,7 +20,8 @@ const Home = () => {
                 </ul>
             </nav>
 
-            {/*<Feed /> TODO: Make feed component*/}
+            {/*Websites repeated to fill page a little*/}
+            <Feed websites={[...websites, ...websites, ...websites, ...websites, ...websites, ...websites]}/>
         </div>
     )
 }
